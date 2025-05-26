@@ -50,7 +50,7 @@ sampler = BackendSampler(backend)
 fidelity = ComputeUncompute(sampler=sampler)
 kernel = FidelityQuantumKernel(fidelity=fidelity, feature_map=enhanced_feature_map)
 
-pegasos_model = PegasosQSVC(quantum_kernel=kernel, C = 600, num_steps=1100)
+pegasos_model = PegasosQSVC(quantum_kernel=kernel, C=600, num_steps=1100)
 pegasos_model.fit(X_train, y_train)
 
 y_pred = pegasos_model.predict(X_test)
